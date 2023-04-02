@@ -1,0 +1,1 @@
+Very simple and messy Linked list, very old and one of my first attempts at data structures and containers.
