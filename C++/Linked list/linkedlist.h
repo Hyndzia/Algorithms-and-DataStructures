@@ -37,7 +37,7 @@ public:
         auto nowa_glowa = new dl_node(dane);
         if (head) {
             head->prev = nowa_glowa;
-            nowa_glowa->nast = head;
+            nowa_glowa->next = head;
             head = nowa_glowa;
         }
         else {
@@ -142,6 +142,7 @@ public:
             }
             np = np->next;
         }
+        return -1;
     }
     dl_node* getHead() {
         return head;
@@ -170,7 +171,6 @@ public:
     }
     void clear_all() {
         dl_node* np = head;
-        dl_node* tmp = nullptr;
         while (np != nullptr) {
             clear_top();
             np = head;
