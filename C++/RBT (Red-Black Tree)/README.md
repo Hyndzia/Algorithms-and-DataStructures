@@ -1,0 +1,1 @@
+Own attempt at creating a Red-Black Tree data structure.

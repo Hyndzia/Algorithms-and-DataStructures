@@ -48,7 +48,7 @@ public:
         while ((newNode != root) && (newNode->parentNode->isBlack == false)) {
             if (newNode->parentNode == newNode->parentNode->parentNode->leftNode) {
                 uncleNode = newNode->parentNode->parentNode->rightNode;
-                if (uncleNode) {         //uncleNode jest czerwony
+                if (uncleNode) {         //uncleNode is red
                     if (uncleNode->isBlack == false) {
                         newNode->parentNode->isBlack = true;
                         uncleNode->isBlack = true;
@@ -57,11 +57,10 @@ public:
                         continue;
                     }
                 }
-                if (newNode == newNode->parentNode->rightNode) {      //formacja trójk¹tna
-                    newNode = newNode->parentNode;
+                if (newNode == newNode->parentNode->rightNode) {      //triangular formation
                     rotateLeft(newNode->rightNode, newNode);
                 }
-                newNode->parentNode->isBlack = true;       //formacja liniowa
+                newNode->parentNode->isBlack = true;       //linear formation
                 newNode->parentNode->parentNode->isBlack = false;
                 rotateRight(newNode->parentNode, newNode->parentNode->parentNode);
                 break;
